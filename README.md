@@ -20,14 +20,14 @@ The first line of a script should have the shebang command (#!/bin/bash).
 After writing the script and exiting the editor, check if you have the permission to execute the file, then use ./filename.sh on the command line to execute the script.
 Scipt example 1: Script to ouput the ls and the pwd command:
 
-`
+```
 #!/bin/bash
 echo Output of ls command:
 ls
 echo #this is an empty line 
 echo Output of pwd command:
 pwd
-`
+```
 
 #### PERMISSIONS: chmod, chown, chgrp
 The permissions are read, write and execute. The permissions on a file are set for the file owner/user, group and others besides the user and group attached to the file. User, groups and others are represented by ***u, g and o*** respectively. The characters in permissions incudes: ***r, w, x*** which stands for ***read, write and execute*** respectively. read permission allows for a file to be viewed, write permission allows for changes to be made to a file while execute permission allows for the script to be run. 
