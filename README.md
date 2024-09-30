@@ -42,9 +42,11 @@ Numbers are also used to represent permissions. read permission - 4, write permi
  * Explicit definition `VAR=value`
  * Read command: takes user inputs and store in a variable `read VAR`
  * Command substitution: `VAR=$(pwd)`
+   
 **Expicit definition**
 `COUNT=5`, `PATH=/var/lib`, `ANIMAL=dog`, `MESSAGE="This is my first script"`. There must not be space around the equal to sign(=) It is conventional to use uppercase letters to represent varaibles.
 To access variables, put a dollar sign infront of the variable name. E.g `echo $COUNT`, `echo "path = $PATH`
+
 **Read Command**: for example:
 ```
 echo -n Enter yur name:  #The -n option ensures the user input is on the same ine as the echo output
@@ -62,5 +64,6 @@ read command can aso be used to read a file. For example:
 read HOSTNAME < /etc/hostname
 echo HOSTNAME
 ```
+**Command Substitution**
 
  
