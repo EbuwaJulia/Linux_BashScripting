@@ -139,5 +139,25 @@ echo "$FIRST + $SECOND = $RESULT"
 if the first argument are for example 5 2, the result would be seven. i.e `./myfile.sh 5 2`
 
 ### Redirection and Piping
+**Command line data streams include:**
+1. STDIN (0) - Standard input (data provided to program)
+2. STDOUT (1) - Standard output (what program prints, defaultly to the terminal)
+3. STDERR (2) - Standard error  (what error messages program prints, defaultly to  the terminal)
 
- 
+```
+cat file1.txt>file2.txt # redirects standard output from file1 to file2
+cat file1.txt 1>file2.txt # does the same as the above
+cat file1.txt 2>errors.txt # indicates output of only errors to the errors.txt file
+cat file1.txt 1>file2.txt 2>errors.txt # indicates standard output and errors outputted to different files
+cat file1.txt &>file2.txt # & is used when the standard output and errors are to be outputted to the same file
+```
+When redirecting with > the output replaces all the data in the receiving file. To append the output to the data already in the receipient file, use ***>>***.
+
+**PIPING**
+Piping is used to send data from one program to the other 
+```
+cat file1.txt | head -5 | tail -3 | wc -l #wc -l prints the number of lines of input in a file
+```
+```
+#on the terminal
+wc -l <file1.txt #this cmmand wud print the number of ines of inputs in file.txt
