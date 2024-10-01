@@ -43,7 +43,7 @@ Numbers are also used to represent permissions. read permission - 4, write permi
  * Read command: takes user inputs and store in a variable `read VAR`
  * Command substitution: `VAR=$(pwd)` `VAR=``pwd```
    
-**Expicit definition**
+**Explicit definition**
 `COUNT=5`, `PATH=/var/lib`, `ANIMAL=dog`, `MESSAGE="This is my first script"`. There must not be space around the equal to sign(=) It is conventional to use uppercase letters to represent varaibles.
 To access variables, put a dollar sign infront of the variable name. E.g `echo $COUNT`, `echo "path = $PATH`
 
@@ -112,16 +112,32 @@ $1 - first argument
 $2 - second argument
 $n - nth argument
 "$@" - all arguments, expands as "$1" "$2" "$3" and so on
-"$*" - all arguments, expands as one string "$1c$2c$3", where c is the first character f interna fies separator (IFS). First character of IFS is usuay space.
+"$*" - all arguments, expands as one string "$1c$2c$3", where c is the first character of internal files separator (IFS). First character of IFS is usually space.
 $# - arguments count***
 
 ```
 echo "Script name: $0"
 echo "First argument: $1"
 echo "Second argument: $2"
-echo "All arguments: \$@: $@"
+echo "All arguments: \$@: $@" #the forward slash (\) before $@ prevents it from executing $@ as a variable
 echo "All arguments: \$*: $*"
 echo "All arguments count : $#"
 ```
+### Internal Files Separator (IFS)
+IFS is used in shell to determine how to do word spitting
+```
+IFS="," # comma is the delimiter
+echo "All arguments: \$@: $@"
+echo "All arguments: \$*: $*"
+```
+```
+FIRST=$1
+SECOND=$2
+let RESULT=$FIRST+$SECOND
+echo "$FIRST + $SECOND = $RESULT"
+```
+if the first argument are for example 5 2, the result would be seven. i.e `./myfile.sh 5 2`
+
+### Redirection and Piping
 
  
