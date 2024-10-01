@@ -107,7 +107,7 @@ NUMBER=2
 RESULT=``echo "$NUMBER*1.9" | bc``
 
 ### ARGUMENTS
-***$0 - Script name
+***$0 - Script name #if this command is executed on the command line and in the root directory, it shows the shell type being worked with and its usually bash 
 $1 - first argument
 $2 - second argument
 $n - nth argument
@@ -116,7 +116,7 @@ $n - nth argument
 $# - arguments count***
 
 ```
-echo "Script name: $0"
+echo "Script name: $0" #echo $0 command executed on the command line tells shell type 
 echo "First argument: $1"
 echo "Second argument: $2"
 echo "All arguments: \$@: $@" #the forward slash (\) before $@ prevents it from executing $@ as a variable
@@ -160,4 +160,22 @@ cat file1.txt | head -5 | tail -3 | wc -l #wc -l prints the number of lines of i
 ```
 ```
 #on the terminal
-wc -l <file1.txt #this cmmand wud print the number of ines of inputs in file.txt
+wc -l <file1.txt #this command would print the number of lines of inputs in file.txt
+cat file1.txt | wc -l
+cat file1txt | head -5 | tail -2 | wc -l #this command should output 2
+cat file1txt | head -5 | tail -2 | wc -l >file2.txt
+```
+
+#### Exit Status ($?)
+Exit status is a numerical value which can tell us if previousy called script or command executed successfully or not. The exit status command is ***$?***
+if $? outputs zero (0), then the previously executed script or command ran successfully. If it outputs other values, then it didnt exit successfully.
+
+```
+let VAR=5*5
+echo $?
+
+let VAR=5*string
+echo $?
+
+let VAR=5*5;echo $VAR # the semi-colon ; enables two commands to be written on the same line and execute successfully
+STATUS=$?;echo "EXIT STATUS is: $STATUS"
