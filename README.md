@@ -41,7 +41,7 @@ Numbers are also used to represent permissions. read permission - 4, write permi
  ### VARIABLES
  * Explicit definition `VAR=value`
  * Read command: takes user inputs and store in a variable `read VAR`
- * Command substitution: `VAR=$(pwd)`
+ * Command substitution: `VAR=$(pwd)` `VAR=``pwd```
    
 **Expicit definition**
 `COUNT=5`, `PATH=/var/lib`, `ANIMAL=dog`, `MESSAGE="This is my first script"`. There must not be space around the equal to sign(=) It is conventional to use uppercase letters to represent varaibles.
@@ -64,6 +64,51 @@ read command can aso be used to read a file. For example:
 read HOSTNAME < /etc/hostname
 echo HOSTNAME
 ```
-**Command Substitution**
+
+**Command Substitution**: This command is majorly for assigning system commands to a variable.
+
+```
+START=$(date +%s)
+CURRENT_DIRECTORY=$(pwd)
+sleep 2 #delays 2 seconds before running the next command
+END=$(date +%s)
+echo
+DIFFERENCE=$(( END - START ))
+echo time elapsed is $DIFFERENCE
+```
+### MATH CALCULATION
+* let (operates with floating numbers)
+* (( ))
+* []
+* expr
+* bc (operates with floating numbers)
+  
+**let**
+```
+NUMBER=5
+let RESULT=NUMBER+5
+```
+**(( ))**
+```
+NUMBER=10
+RESULT=$(( NUMBER + 5 ))
+ANSWER=$[ NUMBER - 4 ]
+OUTPUT=$(expr $NUMBER + 5)
+OUTPUT2=``expr $NUMBER + 5``
+OUTPUT3=``expr 2 + 3``
+echo $RESULT
+echo $ANSWER
+echo $OUTPUT
+echo $OUTPUT1
+echo $OUTPUT2
+```
+**bc**
+NUMBER=2
+RESULT=``echo "$NUMBER*1.9" | bc``
+
+### ARGUMENTS
+
+
+
 
  
