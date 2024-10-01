@@ -107,8 +107,21 @@ NUMBER=2
 RESULT=``echo "$NUMBER*1.9" | bc``
 
 ### ARGUMENTS
+***$0 - Script name
+$1 - first argument
+$2 - second argument
+$n - nth argument
+"$@" - all arguments, expands as "$1" "$2" "$3" and so on
+"$*" - all arguments, expands as one string "$1c$2c$3", where c is the first character f interna fies separator (IFS). First character of IFS is usuay space.
+$# - arguments count***
 
-
-
+```
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+echo "All arguments: \$@: $@"
+echo "All arguments: \$*: $*"
+echo "All arguments count : $#"
+```
 
  
