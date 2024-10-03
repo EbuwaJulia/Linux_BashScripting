@@ -179,3 +179,5 @@ echo $?
 
 let VAR=5*5;echo $VAR # the semi-colon ; enables two commands to be written on the same line and execute successfully
 STATUS=$?;echo "EXIT STATUS is: $STATUS"
+```
+IF Conditional can be found on the script
