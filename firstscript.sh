@@ -38,4 +38,4 @@
 # Wildcards - [[ $STR1 == string-with-wildcards ]]
 # Regular Expressions - [[ $STR1 =~ $regex ]]
 
-# STRING COMPARISON EXAMPLES 
+ STRING COMPARISON EXAMPLES 
